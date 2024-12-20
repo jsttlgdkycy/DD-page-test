@@ -128,9 +128,9 @@
                             <span class="author-block"><sup>*</sup>Work mostly done during an internship at Microsoft Research</span>
                         </div>
 
-                        <!-- <div class="column has-text-centered">
+                        <div class="column has-text-centered">
                             <div class="publication-links">
-                                <span class="link-block">
+                                <!-- <span class="link-block">
                                     <a href="https://arxiv.org/abs/2412.04440" target="_blank"
                                         class="external-link button is-normal is-rounded is-white">
                                         <span class="icon">
@@ -145,25 +145,25 @@
                                         <span class="icon">🤗</span>
                                         <span>Paper page</span>
                                     </a>
-                                </span>       
+                                </span>        -->
                                 <span class="link-block">
-                                    <a href="https://github.com/Karine-Huang/GenMAC" target="_blank" class="external-link button is-normal is-rounded is-white">
+                                    <a href="https://github.com/imagination-research/distilled-decoding" target="_blank" class="external-link button is-normal is-rounded is-white">
                                         <span class="icon">
                                             <img src="./static/images/github-mark.png" alt="">
                                         </span>
                                         <span>Code</span>
                                     </a>
                                 </span>    
-                                <span class="link-block">
+                                <!-- <span class="link-block">
                                     <a href="https://youtu.be/gni-nzJQ9TI" target="_blank" class="external-link button is-normal is-rounded is-white">
                                         <span class="icon">
                                             <i class="fas fa-film"> </i>
                                         </span>
                                         <span>Video</span>
                                     </a>
-                                </span>                             
+                                </span>                              -->
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -306,12 +306,11 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose \name{} (DD), which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
+                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose Distilled Decoding (DD), which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
                             The entire training process of DD does <em>not</em> need the training data of the original AR model (as opposed to some other methods), thus making DD more practical.
                             We evaluate DD on state-of-the-art <em>image</em> AR models and present promising results. For VAR, which requires 10-step generation (680 tokens), DD enables one-step generation <b>(6.3<span id="inline-math1"></span> speed-up)</b>, with an acceptable increase in FID from 4.19 to 9.96 on ImageNet-256. Similarly, for LlamaGen, DD reduces generation from 256 steps to 1, achieving an <b>217.8<span id="inline-math2"></span> speed-up</b> with a comparable FID increase from 4.11 to 11.35 on ImageNet-256. In both cases, baseline methods completely fail with FID scores >100. 
                             DD also excels on <em>text-to-image generation</em>, reducing the generation from 256 steps to 2 for LlamaGen with minimal FID increase from 25.70 to 28.95.
                             As the first work to demonstrate the possibility of one-step generation for image AR models, DD challenges the prevailing notion that AR models are inherently slow, and opens up new opportunities for efficient AR generation.
-                            The code and the pre-trained models will be released at \codeurl{}. The project website is at \website{}.
                         </p>
                         <script>
                             // 渲染 LaTeX 公式
