@@ -24,6 +24,17 @@
             height: auto;
         }
 
+        .image-block {
+            text-align: center; /* 使图片和标题居中 */
+          }
+          
+        .image-block .title {
+            margin-bottom: 10px; /* 标题与图片之间的间距 */
+            font-size: 1.8rem; /* 标题字体大小 */
+            font-weight: bold; /* 标题加粗 */
+            color: #333; /* 标题颜色 */
+        }
+
         figure {
             margin: 0; /* 去掉默认的图像间距 */
             text-align: center; /* 居中图像和标题 */
@@ -164,6 +175,11 @@
                                 </span>                              -->
                             </div>
                         </div>
+                        <div class="title"><b style="color: red;">VAR and LlamaGen can be made to generate images in just one step (up to 218<span id="times"></span> speed-up)!</b></div>
+                        <script>
+                            // 渲染 LaTeX 公式
+                            katex.render("\\times", document.getElementById("times"));
+                        </script>
                     </div>
                 </div>
             </div>
@@ -172,76 +188,92 @@
 
     <section class="hero is-small"> 
         <div class="hero-body">
-            <div class="container">
-                <div class="text-align: center;">
-      
-                    <div class="card">
-                        <div class="container">
-                            <img src="./static/videos/t2i_baseline_small_keep.gif" alt="描述文字" class="gif-image" />
-                        </div>
-                        <div class="card-content has-text-centered">
-                            Generation results on text-to-image task by LlamaGen with 256 steps.
-                        </div>
-                    </div>
-      
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="./static/videos/t2i_dd_step2_small_keep.gif" alt="描述文字" class="gif-image" style="width: 200%; height: 200%;" />
-                        </div>
-                        <div class="card-content has-text-centered">
-                            Generation results on text-to-image task by DD with 2 steps (93<span id="inline-math3"></span>).
-                        </div>
-                    </div>
-    
-                    <script>
-                        // 渲染 LaTeX 公式
-                        katex.render("\\times", document.getElementById("inline-math3"));
-                    </script>
-    
+            <div class="image-container-les">
+                <div class="image-block">
+                    <div class="title"><b>Typical AR Sampling</b></div>
+                    <figure>
+                        <img src="./static/videos/t2i_baseline_small_keep.gif" alt="t2ibaseline">
+                        <figcaption>Examples on text-to-image task by LlamaGen with 256 steps. </figcaption>
+                    </figure>
+                </div>
+                <div class="image-block">
+                    <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                    <figure>
+                        <img src="./static/videos/t2i_dd_step2_small_keep.gif" alt="t2idd">
+                        <figcaption><b>Examples on text-to-image task by distilled decoding (DD) with 2 steps (93<span id="inline-math3"></span>).</b></figcaption>
+                    </figure>
                 </div>
             </div>
-        </div>
+            <script>
+                // 渲染 LaTeX 公式
+                katex.render("\\times", document.getElementById("inline-math3"));
+            </script>
     </section>
     
     <section class="hero is-small">
       <div class="hero-body">
-          <div class="container">
-              <div>
-                  <div class="card">
-                      <div class="card-image">
-                        <img src="./static/videos/baseline_small_keep.gif" alt="Generated Results of LlamaGen" />
-                      </div>
-                      <div class="card-content has-text-centered">
-                          Generated results on ImageNet-256 by LlamaGen with 256 steps.
-                      </div>
-                  </div>
-  
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="./static/videos/dd_step2_small_keep.gif" alt="Generated Results of DD" />
-                    </div>
-                    <div class="card-content has-text-centered">
-                        Generation results on ImageNet-256 by DD with 2 steps (118<span id="inline-math1"></span>).
-                    </div>
-                  </div>
-  
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="./static/videos/dd_step1_small_keep.gif" alt="Generated Results of DD" />
-                    </div>
-                    <div class="card-content has-text-centered">
-                        Generation results on ImageNet-256 by DD with 1 steps (217<span id="inline-math2"></span>).
-                    </div>
-                  </div>
-                <script>
-                    // 渲染 LaTeX 公式
-                    katex.render("\\times", document.getElementById("inline-math1"));
-                    katex.render("\\times", document.getElementById("inline-math2"));
-                </script>
-  
-              </div>
+        <div class="image-container-les">
+            <div class="image-block">
+                <div class="title"><b>Typical AR Sampling</b></div>
+                <figure>
+                    <img src="./static/videos/baseline_small_keep.gif" alt="baseline">
+                    <figcaption>Generated results on ImageNet-256 by LlamaGen with 256 steps. </figcaption>
+                </figure>
+            </div>
+            <div class="image-block">
+                <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                <figure>
+                    <img src="./static/videos/dd_step2_small_keep.gif" alt="dd2step">
+                    <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (118<span id="inline-math1"></span>).</b></figcaption>
+                </figure>
+            </div>
+            <div class="image-block">
+                <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                <figure>
+                    <img src="./static/videos/dd_step1_small_keep.gif" alt="dd1step">
+                    <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (217<span id="inline-math2"></span>).</b></figcaption>
+                </figure>
+            </div>
+        </div>
+        <script>
+            // 渲染 LaTeX 公式
+            katex.render("\\times", document.getElementById("inline-math1"));
+            katex.render("\\times", document.getElementById("inline-math2"));
+        </script>
+      </div>
+  </section>
+  <br>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="image-container-les">
+          <div class="image-block">
+              <div class="title"><b>Typical VAR Sampling</b></div>
+              <figure>
+                  <img src="./static/videos/var_baseline.gif" alt="baseline">
+                  <figcaption>Generated results on ImageNet-256 by VAR with 10 steps. </figcaption>
+              </figure>
+          </div>
+          <div class="image-block">
+              <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+              <figure>
+                  <img src="./static/videos/var_dd_step2.gif" alt="dd2step">
+                  <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (3.7<span id="timesvar2"></span>).</b></figcaption>
+              </figure>
+          </div>
+          <div class="image-block">
+              <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+              <figure>
+                  <img src="./static/videos/var_dd_step1.gif" alt="dd1step">
+                  <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (6.3<span id="timesvar1"></span>).</b></figcaption>
+              </figure>
           </div>
       </div>
+      <script>
+          // 渲染 LaTeX 公式
+          katex.render("\\times", document.getElementById("timesvar2"));
+          katex.render("\\times", document.getElementById("timesvar1"));
+      </script>
+    </div>
   </section>
   
   <script>
@@ -306,16 +338,16 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose Distilled Decoding (DD), which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
+                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: <b>can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em></b>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose Distilled Decoding (DD), which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
                             The entire training process of DD does <em>not</em> need the training data of the original AR model (as opposed to some other methods), thus making DD more practical.
-                            We evaluate DD on state-of-the-art <em>image</em> AR models and present promising results. For VAR, which requires 10-step generation (680 tokens), DD enables one-step generation <b>(6.3<span id="inline-math1"></span> speed-up)</b>, with an acceptable increase in FID from 4.19 to 9.96 on ImageNet-256. Similarly, for LlamaGen, DD reduces generation from 256 steps to 1, achieving an <b>217.8<span id="inline-math2"></span> speed-up</b> with a comparable FID increase from 4.11 to 11.35 on ImageNet-256. In both cases, baseline methods completely fail with FID scores >100. 
+                            We evaluate DD on state-of-the-art <em>image</em> AR models and present promising results. For VAR, which requires 10-step generation (680 tokens), DD enables one-step generation <b>(6.3<span id="inline-math4"></span> speed-up)</b>, with an acceptable increase in FID from 4.19 to 9.96 on ImageNet-256. Similarly, for LlamaGen, DD reduces generation from 256 steps to 1, achieving an <b>217.8<span id="inline-math5"></span> speed-up</b> with a comparable FID increase from 4.11 to 11.35 on ImageNet-256. In both cases, baseline methods completely fail with FID scores >100. 
                             DD also excels on <em>text-to-image generation</em>, reducing the generation from 256 steps to 2 for LlamaGen with minimal FID increase from 25.70 to 28.95.
                             As the first work to demonstrate the possibility of one-step generation for image AR models, DD challenges the prevailing notion that AR models are inherently slow, and opens up new opportunities for efficient AR generation.
                         </p>
                         <script>
                             // 渲染 LaTeX 公式
-                            katex.render("\\times", document.getElementById("inline-math1"));
-                            katex.render("\\times", document.getElementById("inline-math2"));
+                            katex.render("\\times", document.getElementById("inline-math4"));
+                            katex.render("\\times", document.getElementById("inline-math5"));
                         </script>
                     </div>
                 </div>
@@ -335,7 +367,7 @@
         <ul style="list-style: none; padding: 0; font-size: 1.2em; text-align: left;">
           <li>🌟 We thoroughly discussed the reasons why existing methods cannot achieve extremely few steps.</li>
           <li>🌟 DD novelly combines AR method with flow-matching to tackle the problem.</li>
-          <li>🌟 For the first time, DD demonstrates the feasibility of 1-step sampling with SOTA image AR methods.</li>
+          <li>🌟 For the first time, DD demonstrates the feasibility of 1-step sampling with SOTA image AR methods, including VAR and LlamaGen.</li>
         </ul>
       </div>
     </div>
@@ -350,9 +382,9 @@
       </p>
     <p style="text-align: left;">
         <span style="font-size: 24px; font-weight: bold;"><b>Training Few-step AR is non-trivial</b></span><br>
-        Simultaneously predicting the probability of a set of tokens is a common method to reduce the number of AR steps. However, we show that this method doesn't work for sampling with very few steps.
-        The target of this method, <span id="target_dist"></span>, completely ignore the correlations between tokens, introduces a gap with the ground truth distribution <span id="real_dist"></span>.
-        When the number of steps is small, the size of set will be large, leading to unbearable performance loss. Below are samples of <b>one step</b> generation by this method.
+        Simultaneously predicting the probabilities of a set of tokens is a common method for reducing the number of autoregressive (AR) steps. However, we demonstrate that this method fails when sampling with very few steps.
+        The target of this method, <span id="target_dist"></span>, completely ignores the correlations between the predicted tokens, creating a gap with the ground truth distribution <span id="real_dist"></span>.
+        When the number of steps is small, the size of the set becomes large, resulting in significant performance degradation. Below are examples of <b>one-step generation</b> using this method.
     </p>
     <div class="image-container-les">
         <img src="./static/images/0.png" alt="Failed example 0" style="width: 200px; height: 200px;">
@@ -363,27 +395,34 @@
         <span style="font-size: 24px; font-weight: bold;"><b>The Core Idea of DD</b></span><br>
     </p>
     <p style="text-align: left;">
-      (1) DD use <i>pre-trained AR model</i> and <i>flow-matching</i> to construct the <b>mapping from a noise token to a data token</b> (figure left).<br>
-      (2) Then, DD construct a trajectory that gradually <b>transfers a sequence with all tokens are noise to a sequence with all tokens are generated data</b> (figure right). Each noise sequenec corresponds to a unique traejctory.<br>
-      (3) Based on the trajectory, DD distills model to conduct few-step sampling (figure right). 
+      (1) DD uses a <i>pre-trained AR model</i> and <i>flow-matching</i> to construct the <b>mapping from a noise token to a data token</b> (figure left).<br>
+      (2) Next, DD construct a trajectory that gradually <b>transforms a sequence where all tokens are noise to a sequence where all tokens are generated data</b> (figure right). Each noise sequence corresponds to a unique traejctory.<br>
+      (3) Based on this trajectory, DD distills a model to perform few-step sampling (figure right). 
     </p>
   <div class="image-container-les">
     <figure>
         <img src="./static/images/flow_matching.png" alt="AR Flow Matching">
-        <figcaption>AR Flow Matching. </figcaption>
+        <figcaption>AR Flow Matching, where <span id="qi"></span></figcaption> is generated token from the codebook and <span id="epsi"></span> is noise token independently drawn from standard Gaussian distribution.
     </figure>
     <figure>
         <img src="./static/images/training_generation_workflow.png" alt="Workflow">
-        <figcaption>Training and Generation Workflow</figcaption>
+        <figcaption>Training and Generation Workflow, where <span id="qi2"></span></figcaption> is generated token from the codebook and <span id="epsi2"></span> is noise token independently drawn from a standard Gaussian distribution.</figcaption>
     </figure>
+    <script>
+        // 渲染 LaTeX 公式
+        katex.render("q_i", document.getElementById("qi"));
+        katex.render("\\epsilon_i", document.getElementById("epsi"));
+        katex.render("q_i", document.getElementById("qi2"));
+        katex.render("\\epsilon_i", document.getElementById("epsi2"));
+    </script>
   </div>
   <div>
     <p style="text-align: left;">
         <span style="font-size: 24px; font-weight: bold;"><b>The detailed workflow of DD</b></span><br>
-        As discussed above, DD uses the pre-trained AR model and flow-matching to construct a trajecotry and distills the model based it. The detailed workflow of DD contains 3 parts:<br>
-        (1) <b>Dataset generation</b>. We first constructs a dataset of noise-data pairs. Specifically, we randomly sample noise sequence from standard Gaussian distribution and calculate the endpoint of the trajectory.<br>
-        (2) <b>Training</b>. We then distill a model to predict the endpoint of the trajectory given specific intermediate point. including the starting point, as input.<br>
-        (3) <b>Sampling</b>. Finally, we can conduct sampling from a pure noise sequence. We can return to a closer intermediate point after obtaining the final value for higher performance. Or we can involve the pre-trained AR model in this process to get finer performance-time trade-off.<br>
+        As discussed above, DD uses a pre-trained AR model and flow-matching to construct a trajecotry and distills the model based on it. The detailed workflow of DD consists of three parts:<br>
+        (1) <b>Dataset generation</b>. We first construct a dataset of noise-data pairs. Specifically, we randomly sample noise sequences from a standard Gaussian distribution and calculate the endpoint of the trajectory.<br>
+        (2) <b>Training</b>. We then distill a model to predict the endpoint of the trajectory given a specific intermediate point. including the starting point, as input.<br>
+        (3) <b>Sampling</b>. Finally, we conduct sampling from a pure noise sequence. We can revert to a closer intermediate point after obtaining the final value and re-predict it for higher performance. Alternatively, we can involve the pre-trained AR model in this process to achieve a finer quality-time trade-off.<br>
     </p>
     <script>
         // 渲染 LaTeX 公式
@@ -473,7 +512,7 @@
         <span style="font-size: 24px; font-weight: bold;"><b>Text-to-Image Generation</b></span><br>
       </p>
       <p style="text-align: left;">
-        Prompts without * are from the LAION-COCO dataset, while those with the mark are designed by us.
+        Prompts without * are from the LAION-COCO dataset, while those marked with * were created by us.
       </p>
       <div class="container is-max-desktop">
         <div id="carousel-container-1" class="carousel-container-1" data-bs-ride="carousel">
