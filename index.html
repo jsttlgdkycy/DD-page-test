@@ -193,14 +193,14 @@
         <div class="hero-body">
             <div class="image-container-les">
                 <div class="image-block">
-                    <div class="title" style="font-size: 1.2em;"><b>LlamaGen 256 steps</b></div>
+                    <div class="title" style="font-size: 1.2em;"><b>LlamaGen (256-step generation) </b></div>
                     <figure>
                         <img src="./static/videos/t2i_baseline_small_keep.gif" alt="t2ibaseline">
                         <!-- <figcaption>Examples on text-to-image task by LlamaGen with 256 steps. </figcaption> -->
                     </figure>
                 </div>
                 <div class="image-block">
-                    <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) 2 steps (93<span id="inline-math3"></span> speedup)</b></div>
+                    <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) (2-step generation, 93<span id="inline-math3"></span> speedup)</b></div>
                     <figure>
                         <img src="./static/videos/t2i_dd_step2_small_keep.gif" alt="t2idd">
                         <!-- <figcaption><b>Examples on text-to-image task by distilled decoding (DD) with 2 steps (93<span id="inline-math3"></span> speedup).</b></figcaption> -->
@@ -218,21 +218,21 @@
       <div class="hero-body">
         <div class="image-container-les">
             <div class="image-block">
-                <div class="title" style="font-size: 1.2em;"><b>LlamaGen 256 steps</b></div>
+                <div class="title" style="font-size: 1.2em;"><b>LlamaGen (256-step generation)</b></div>
                 <figure>
                     <img src="./static/videos/baseline_small_keep.gif" alt="baseline">
                     <!-- <figcaption>Generated results on ImageNet-256 by LlamaGen with 256 steps. </figcaption> -->
                 </figure>
             </div>
             <div class="image-block">
-                <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) 2 steps (118<span id="inline-math1"></span> speedup)</b></div>
+                <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) (2-step generation, 118<span id="inline-math1"></span> speedup)</b></div>
                 <figure>
                     <img src="./static/videos/dd_step2_small_keep.gif" alt="dd2step">
                     <!-- <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (118<span id="inline-math1"></span> speedup).</b></figcaption> -->
                 </figure>
             </div>
             <div class="image-block">
-                <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) 1 step (217<span id="inline-math2"></span> speedup)</b></div>
+                <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) (1-step generation, 217<span id="inline-math2"></span> speedup)</b></div>
                 <figure>
                     <img src="./static/videos/dd_step1_small_keep.gif" alt="dd1step">
                     <!-- <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (217<span id="inline-math2"></span> speedup).</b></figcaption> -->
@@ -251,21 +251,21 @@
     <div class="hero-body">
       <div class="image-container-les">
           <div class="image-block">
-              <div class="title" style="font-size: 1.2em;"><b>VAR 10 steps</b></div>
+              <div class="title" style="font-size: 1.2em;"><b>VAR (10-step generation)</b></div>
               <figure>
                   <img src="./static/videos/var_baseline.gif" alt="baseline">
                   <!-- <figcaption>Generated results on ImageNet-256 by VAR with 10 steps. </figcaption> -->
               </figure>
           </div>
           <div class="image-block">
-              <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) 2 steps (3.7<span id="timesvar2"></span> speedup)</b></div>
+              <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) (2-step generation, 3.7<span id="timesvar2"></span> speedup)</b></div>
               <figure>
                   <img src="./static/videos/var_dd_step2.gif" alt="dd2step">
                   <!-- <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (3.7<span id="timesvar2"></span>).</b></figcaption> -->
               </figure>
           </div>
           <div class="image-block">
-              <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) 1 step (6.3<span id="timesvar1"></span> speedup)</b></div>
+              <div class="title" style="font-size: 1.2em;"><b>Distilled Decoding (DD) (1-step generation, 6.3<span id="timesvar1"></span> speedup)</b></div>
               <figure>
                   <img src="./static/videos/var_dd_step1.gif" alt="dd1step">
                   <!-- <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (6.3<span id="timesvar1"></span>).</b></figcaption> -->
@@ -342,7 +342,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: <b>can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em></b>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose Distilled Decoding (DD), which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
+                            Autoregressive (AR) models have recently achieved state-of-the-art performance in text and image generation. However, their primary limitation is slow generation speed due to the token-by-token process. We ask an ambitious question: <b>can a pre-trained AR model be adapted to generate outputs in just <em>one or two steps</em></b>? If successful, this would significantly advance the development and deployment of AR models. We notice that existing works that attempt to speed up AR generation by generating multiple tokens at once fundamentally cannot capture the output distribution due to the conditional dependencies between tokens, limiting their effectiveness for few-step generation. To overcome this, we propose <b>Distilled Decoding (DD)</b>, which leverages flow matching to create a deterministic mapping from Gaussian distribution to the output distribution of the pre-trained AR model. We then train a network to distill this mapping, enabling few-step generation. 
                             The entire training process of DD does <em>not</em> need the training data of the original AR model (as opposed to some other methods), thus making DD more practical.
                             We evaluate DD on state-of-the-art <em>image</em> AR models and present promising results. For VAR, which requires 10-step generation (680 tokens), DD enables one-step generation <b>(6.3<span id="inline-math4"></span> speed-up)</b>, with an acceptable increase in FID from 4.19 to 9.96 on ImageNet-256. Similarly, for LlamaGen, DD reduces generation from 256 steps to 1, achieving an <b>217.8<span id="inline-math5"></span> speed-up</b> with a comparable FID increase from 4.11 to 11.35 on ImageNet-256. In both cases, baseline methods completely fail with FID scores >100. 
                             DD also excels on <em>text-to-image generation</em>, reducing the generation from 256 steps to 2 for LlamaGen with minimal FID increase from 25.70 to 28.95.
@@ -406,11 +406,11 @@
   <div class="image-container-les">
     <figure>
         <img src="./static/images/flow_matching.png" alt="AR Flow Matching">
-        <figcaption>AR Flow Matching, where <span id="qi"></span></figcaption> is generated token from the codebook and <span id="epsi"></span> is noise token independently drawn from standard Gaussian distribution.
+        <figcaption>AR Flow Matching, where <span id="qi"></span> is generated token from the codebook and <span id="epsi"></span> is noise token independently drawn from standard Gaussian distribution.</figcaption>
     </figure>
     <figure>
         <img src="./static/images/training_generation_workflow.png" alt="Workflow">
-        <figcaption>Training and Generation Workflow, where <span id="qi2"></span></figcaption> is generated token from the codebook and <span id="epsi2"></span> is noise token independently drawn from a standard Gaussian distribution.</figcaption>
+        <figcaption>Training and Generation Workflow, where <span id="qi2"></span> is generated token from the codebook and <span id="epsi2"></span> is noise token independently drawn from a standard Gaussian distribution.</figcaption>
     </figure>
     <script>
         // 渲染 LaTeX 公式
