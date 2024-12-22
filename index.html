@@ -80,7 +80,7 @@
     </style>
 
 
-    <title>DD</title>
+    <title>Distilld Decoding</title>
     <script>
         var x = window.innerWidth;
         function resizeFresh(){
@@ -186,21 +186,22 @@
         </div>
     </section>
 
+    <div class="title" style="text-align:center"><b>Text-to-image Generation</b></div>
     <section class="hero is-small"> 
         <div class="hero-body">
             <div class="image-container-les">
                 <div class="image-block">
-                    <div class="title"><b>Typical AR Sampling</b></div>
+                    <div class="title"><b>LlamaGen 256 steps</b></div>
                     <figure>
                         <img src="./static/videos/t2i_baseline_small_keep.gif" alt="t2ibaseline">
-                        <figcaption>Examples on text-to-image task by LlamaGen with 256 steps. </figcaption>
+                        <!-- <figcaption>Examples on text-to-image task by LlamaGen with 256 steps. </figcaption> -->
                     </figure>
                 </div>
                 <div class="image-block">
-                    <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                    <div class="title"><b>Distilled Decoding (DD) 2 steps (93<span id="inline-math3"></span> speedup)</b></div>
                     <figure>
                         <img src="./static/videos/t2i_dd_step2_small_keep.gif" alt="t2idd">
-                        <figcaption><b>Examples on text-to-image task by distilled decoding (DD) with 2 steps (93<span id="inline-math3"></span>).</b></figcaption>
+                        <!-- <figcaption><b>Examples on text-to-image task by distilled decoding (DD) with 2 steps (93<span id="inline-math3"></span> speedup).</b></figcaption> -->
                     </figure>
                 </div>
             </div>
@@ -210,28 +211,29 @@
             </script>
     </section>
     
+    <div class="title" style="text-align:center"><b>Generation on ImageNet-256</b></div>
     <section class="hero is-small">
       <div class="hero-body">
         <div class="image-container-les">
             <div class="image-block">
-                <div class="title"><b>Typical AR Sampling</b></div>
+                <div class="title"><b>LlamaGen 256 steps</b></div>
                 <figure>
                     <img src="./static/videos/baseline_small_keep.gif" alt="baseline">
-                    <figcaption>Generated results on ImageNet-256 by LlamaGen with 256 steps. </figcaption>
+                    <!-- <figcaption>Generated results on ImageNet-256 by LlamaGen with 256 steps. </figcaption> -->
                 </figure>
             </div>
             <div class="image-block">
-                <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                <div class="title"><b>Distilled Decoding (DD) 2 steps (118<span id="inline-math1"></span> speedup)</b></div>
                 <figure>
                     <img src="./static/videos/dd_step2_small_keep.gif" alt="dd2step">
-                    <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (118<span id="inline-math1"></span>).</b></figcaption>
+                    <!-- <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (118<span id="inline-math1"></span> speedup).</b></figcaption> -->
                 </figure>
             </div>
             <div class="image-block">
-                <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+                <div class="title"><b>Distilled Decoding (DD) 1 step (217<span id="inline-math2"></span> speedup)</b></div>
                 <figure>
                     <img src="./static/videos/dd_step1_small_keep.gif" alt="dd1step">
-                    <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (217<span id="inline-math2"></span>).</b></figcaption>
+                    <!-- <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (217<span id="inline-math2"></span> speedup).</b></figcaption> -->
                 </figure>
             </div>
         </div>
@@ -247,24 +249,24 @@
     <div class="hero-body">
       <div class="image-container-les">
           <div class="image-block">
-              <div class="title"><b>Typical VAR Sampling</b></div>
+              <div class="title"><b>VAR 10 steps</b></div>
               <figure>
                   <img src="./static/videos/var_baseline.gif" alt="baseline">
-                  <figcaption>Generated results on ImageNet-256 by VAR with 10 steps. </figcaption>
+                  <!-- <figcaption>Generated results on ImageNet-256 by VAR with 10 steps. </figcaption> -->
               </figure>
           </div>
           <div class="image-block">
-              <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+              <div class="title"><b>Distilled Decoding (DD) 2 steps (3.7<span id="timesvar2"></span> speedup)</b></div>
               <figure>
                   <img src="./static/videos/var_dd_step2.gif" alt="dd2step">
-                  <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (3.7<span id="timesvar2"></span>).</b></figcaption>
+                  <!-- <figcaption><b>Generation results on ImageNet-256 by distilled decoding (DD) with 2 steps (3.7<span id="timesvar2"></span>).</b></figcaption> -->
               </figure>
           </div>
           <div class="image-block">
-              <div class="title"><b>Distilled Decoding (DD) Sampling</b></div>
+              <div class="title"><b>Distilled Decoding (DD) 1 step (6.3<span id="timesvar1"></span> speedup)</b></div>
               <figure>
                   <img src="./static/videos/var_dd_step1.gif" alt="dd1step">
-                  <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (6.3<span id="timesvar1"></span>).</b></figcaption>
+                  <!-- <figcaption><b>Generation results on ImageNet-256 by our distilled decoding (DD) with 1 steps (6.3<span id="timesvar1"></span>).</b></figcaption> -->
               </figure>
           </div>
       </div>
@@ -395,9 +397,9 @@
         <span style="font-size: 24px; font-weight: bold;"><b>The Core Idea of DD</b></span><br>
     </p>
     <p style="text-align: left;">
-      (1) DD uses a <i>pre-trained AR model</i> and <i>flow-matching</i> to construct the <b>mapping from a noise token to a data token</b> (figure left).<br>
-      (2) Next, DD construct a trajectory that gradually <b>transforms a sequence where all tokens are noise to a sequence where all tokens are generated data</b> (figure right). Each noise sequence corresponds to a unique traejctory.<br>
-      (3) Based on this trajectory, DD distills a model to perform few-step sampling (figure right). 
+        (1) DD uses a <i>pre-trained AR model</i> and <i>flow-matching</i> to construct the <b>mapping from a noise token to a data token</b> (see figure left).<br>
+        (2) Next, DD constructs a trajectory that gradually <b>transforms a sequence where all tokens are noise into a sequence where all tokens are generated data</b> (see figure right). Each noise sequence corresponds to a unique traejctory.<br>
+        (3) Based on this trajectory, DD distills a model to perform few-step sampling (see figure right).
     </p>
   <div class="image-container-les">
     <figure>
