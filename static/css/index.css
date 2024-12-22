@@ -130,25 +130,29 @@ body {
   display: flex; /* 使用 flexbox 布局 */
   flex-wrap: nowrap; /* 不允许换行 */
   justify-content: space-between; /* 卡片之间的间距 */
-  overflow: hidden; /* 隐藏溢出的内容 */
-  gap: 50px; /* 设置每张图片之间的间隔 */
+  overflow: visible; /*隐藏溢出的内容 */
+  gap:120px; /* 设置每张图片之间的间隔 */
 }
 
 .results-carousel .card {
-  flex: 0 0 calc(50% - 20px);  /* 每个卡片宽度为 50% 减去 margin */
+  flex: 0 0 calc(70% - 30px);  /* 每个卡片宽度为 50% 减去 margin */
   margin: 30px;                /* 每个卡片之间的间距 */
-  overflow: hidden;            /* 隐藏溢出的内容 */
+  overflow: visible;            /* 隐藏溢出的内容 */
 }
 
 .results-carousel figure {
   flex: 0 0 100%; /* 每个 figure 占满容器宽度 */
+  transform: scale(1.1);
+  overflow: visible;
   margin: 30px;
+  position: relative;
 }
 
 .results-carousel img {
-  width: 100%; /* 确保图片宽度为容器的 100% */
+  width: 150%; /* 确保图片宽度为容器的 100% */
   height: auto; /* 高度自适应 */
   object-fit: cover; /* 保持图片的比例 */
+  overflow: visible;
 }
 
 

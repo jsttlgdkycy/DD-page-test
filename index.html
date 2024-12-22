@@ -38,6 +38,7 @@
         figure {
             margin: 0; /* 去掉默认的图像间距 */
             text-align: center; /* 居中图像和标题 */
+            overflow: visible;
         }
 
         img {
@@ -47,8 +48,9 @@
 
         figcaption {
             margin-top: 10px; /* 图像与标题之间的间隔 */
-            font-size: 1rem; /* 设置标题字体大小 */
+            font-size: 0.8rem; /* 设置标题字体大小 */
         }
+
         .images-container-1  {
             display: flex;
             justify-content: space-between; /* 横向排列 */
@@ -367,8 +369,8 @@
       <!-- Highlight list -->
       <div style="text-align: center; max-width: 1000px; margin: auto;">
         <ul style="list-style: none; padding: 0; font-size: 1.2em; text-align: left;">
-          <li>🌟 We thoroughly discussed the reasons why existing methods cannot achieve extremely few steps.</li>
-          <li>🌟 DD novelly combines AR method with flow-matching to tackle the problem.</li>
+          <li>🌟 We thoroughly analyzed the reasons why existing methods fail to achieve extremely few-step generation.</li>
+          <li>🌟 DD novelly combines the AR method with flow-matching to tackle the problem.</li>
           <li>🌟 For the first time, DD demonstrates the feasibility of 1-step sampling with SOTA image AR methods, including VAR and LlamaGen.</li>
         </ul>
       </div>
@@ -423,7 +425,7 @@
         <span style="font-size: 24px; font-weight: bold;"><b>The detailed workflow of DD</b></span><br>
         As discussed above, DD uses a pre-trained AR model and flow-matching to construct a trajecotry and distills the model based on it. The detailed workflow of DD consists of three parts:<br>
         (1) <b>Dataset generation</b>. We first construct a dataset of noise-data pairs. Specifically, we randomly sample noise sequences from a standard Gaussian distribution and calculate the endpoint of the trajectory.<br>
-        (2) <b>Training</b>. We then distill a model to predict the endpoint of the trajectory given a specific intermediate point. including the starting point, as input.<br>
+        (2) <b>Training</b>. We then distill a model to predict the endpoint of the trajectory given a specific intermediate point, including the starting point, as input.<br>
         (3) <b>Sampling</b>. Finally, we conduct sampling from a pure noise sequence. We can revert to a closer intermediate point after obtaining the final value and re-predict it for higher performance. Alternatively, we can involve the pre-trained AR model in this process to achieve a finer quality-time trade-off.<br>
     </p>
     <script>
@@ -481,35 +483,37 @@
           <span style="font-size: 2.05em;"><b>More Qualitative Results</b></span><br>
       </p>
       <p style="text-align: left;">
-      We demonstrate more generated examples here.
+      We demonstrate more generated examples here.<br>
       </p>
       <p style="text-align: Center;">
-        <span style="font-size: 24px; font-weight: bold;"><b>Lable-conditional Generation</b></span><br>
+        <span style="font-size: 24px; font-weight: bold;"><b>Lable-conditional Generation</b></span><br><br>
       </p>
-      <p style="text-align: left;">
-      From left to right: DD 1-step sampling; DD 2 steps sampling; teacher-involved sampling (4 steps for VAR and 42 steps for LlamaGen); Teacher sampling (10 steps for VAR and 256 steps for LlamaGen); 
-      </p>
+
       <div id="results-carousel" class="carousel results-carousel" data-bs-ride="carousel">
           <figure>
-              <img src="./static/images/llamagen1_update_samenoise.png" alt="llamagen1">
-              <figcaption>Examples with LlamaGen model. </figcaption>
+              <figcaption>&nbsp;&nbsp;&nbsp;&nbsp;   DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LlamaGen<br>
+                &nbsp; 1-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42-step &nbsp;&nbsp;&nbsp;&nbsp; 256-step</figcaption-1>
+              <img src="./static/images/llamagen1_update_samenoise.png" alt="llamagen1" style="width:200%; height:200%">
           </figure>
           <figure>
+            <figcaption>&nbsp;&nbsp;&nbsp;&nbsp;   DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LlamaGen<br>
+                &nbsp; 1-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42-step &nbsp;&nbsp;&nbsp;&nbsp; 256-step</figcaption-1>
               <img src="./static/images/llamagen2_update_samenoise.png" alt="llamagen2">
-              <figcaption>Examples with LlamaGen model. </figcaption>
           </figure>
           <figure>
+            <figcaption>&nbsp;   DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VAR<br>
+                &nbsp; 1-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4-step &nbsp;&nbsp;&nbsp;&nbsp; 10-step</figcaption-1>
               <img src="./static/images/var1_update_samenoise.png" alt="var1">
-              <figcaption>Examples with VAR model. </figcaption>
           </figure>
           <figure>
+            <figcaption>&nbsp;   DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VAR<br>
+                &nbsp; 1-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2-step &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4-step &nbsp;&nbsp;&nbsp;&nbsp; 10-step</figcaption-1>
             <img src="./static/images/var2_update_samenoise.png" alt="var2">
-            <figcaption>Examples with VAR model. </figcaption>
           </figure>
       </div>
       
       &nbsp;
-
+      <br><br><br>
       <p style="text-align: Center;">
         <span style="font-size: 24px; font-weight: bold;"><b>Text-to-Image Generation</b></span><br>
       </p>
